@@ -1,0 +1,7 @@
+.THIS .small-box {
+    width: 130px;
+}
+
+.THIS.small-box {
+    width: 130px;
+}

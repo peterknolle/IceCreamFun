@@ -1,0 +1,23 @@
+<aura:component >
+	<aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="mode" type="String" default="view"/>
+    <aura:attribute name="fields" type="String[]" default="['Shop__c','Favorite_Description__c']" />
+    
+    <lightning:notificationsLibrary aura:id="notificationsLib"/>
+    
+    <lightning:card iconName="standard:event" title="Trip Details" class="slds-p-around_small">
+        <aura:if isTrue="{!not(empty(v.recordId))}">
+                <lightning:recordForm aura:id="tripRecord"
+                    recordId="{!v.recordId}" 
+                    objectApiName="Trip__c"
+                    mode="view"
+                    fields="{!v.fields}"
+                    onsuccess="{!c.handleTripSaved}"
+                    columns="1"/>
+            <aura:set attribute="else">
+            	{!$Label.c.NoReviewSelected}
+            </aura:set>
+         </aura:if>
+        
+    </lightning:card>
+</aura:component>

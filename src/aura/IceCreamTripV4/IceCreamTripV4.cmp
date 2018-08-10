@@ -1,0 +1,55 @@
+<aura:component >
+   
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="mode" type="String" default="view"/>
+    <aura:attribute name="fields" type="String[]" 
+                    default="['Shop__c','Time__c','Weather__c','Notes__c','Favorite_Description__c']" />
+    
+    <aura:attribute name="recordError" type="String" default=""/>
+    
+    <aura:attribute name="newReviewMode" type="Boolean" default="false"/>
+    <aura:attribute name="newReviewFields" type="String[]" 
+                    default="['Reviewer__c','Flavor__c','Rating__c','Price__c']"/>
+                    
+    <aura:attribute name="shopName" type="String"/>
+    <aura:attribute name="tripTime" type="Date"/>
+    
+    <lightning:notificationsLibrary aura:id="notificationsLib"/>
+    
+    <aura:registerEvent name="reviewAdded" type="c:reviewAdded"/>
+    
+    <aura:if isTrue="{!not(empty(v.recordId))}">
+        <force:recordData aura:id="deleteHandler"
+                          recordId="{!v.recordId}"
+                          fields="Id"
+                          targetError="{!v.recordError}" />
+    </aura:if>
+    
+    <lightning:card iconName="standard:event" title="Trip Details" class="slds-p-around_small">
+        <aura:set attribute="actions">
+            <lightning:button label="New Trip" variant="neutral" onclick="{!c.handleNewTrip}" disabled="{!empty(v.recordId)}"/>
+            <lightning:button label="New Review" variant="neutral" onclick="{!c.handleNewReview}" disabled="{!empty(v.recordId)}"/>
+            <lightning:button label="Delete" variant="destructive" onclick="{!c.handleDeleteTrip}" disabled="{!empty(v.recordId)}"/>
+        </aura:set>
+        
+        <aura:if isTrue="{!v.newReviewMode == true}">
+        	<lightning:recordForm aura:id="newReview"
+                 objectApiName="Review__c" 
+                 fields="{!v.newReviewFields}"
+                 columns="2"
+                 mode="edit"
+                 onsuccess="{!c.handleReviewCreated}"
+                 onsubmit="{!c.handleSaveNewReview}" />
+        </aura:if>
+        
+        <lightning:recordForm aura:id="tripRecord"
+            recordId="{!v.recordId}" 
+        	objectApiName="Trip__c"
+            mode="{!empty(v.recordId) ? 'edit' : 'view'}"
+            fields="{!v.fields}"
+            onload="{!c.handleTripLoaded}"
+            onsuccess="{!c.handleTripSaved}"
+            columns="1"/>
+        
+    </lightning:card>
+</aura:component>

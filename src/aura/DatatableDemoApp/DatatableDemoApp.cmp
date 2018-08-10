@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <!-- 1 to 3-->
+    <c:IceCreamReviewsV3/>
+</aura:component>

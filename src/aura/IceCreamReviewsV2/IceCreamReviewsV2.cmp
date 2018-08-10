@@ -1,0 +1,19 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="IceCreamReviewsControllerV2">
+    <lightning:notificationsLibrary aura:id="notificationsLib"/>
+    
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="Object[]"/>
+    <aura:attribute name="sortedBy" type="String" default="tripTime"/>
+    <aura:attribute name="sortedDirection" type="String" default="desc"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+        <lightning:datatable
+            columns="{!v.columns}"
+            data="{!v.data}"
+            keyField="Id"
+            hideCheckboxColumn="true"
+            onsort="{!c.handleSort}"
+            sortedBy="{!v.sortedBy}"
+            sortedDirection="{!v.sortedDirection}"/>
+</aura:component>

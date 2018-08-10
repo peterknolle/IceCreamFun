@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <lightning:card>
+        <c:LayoutV4/>
+    </lightning:card>
+</aura:component>

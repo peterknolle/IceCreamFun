@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>false</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>false</enableSharing>
+    <enableStreamingApi>false</enableStreamingApi>
+    <fields>
+        <fullName>Flavor__c</fullName>
+        <externalId>false</externalId>
+        <label>Flavor</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Banana</fullName>
+                    <default>false</default>
+                    <label>Banana</label>
+                </value>
+                <value>
+                    <fullName>Black Raspberry</fullName>
+                    <default>false</default>
+                    <label>Black Raspberry</label>
+                </value>
+                <value>
+                    <fullName>Butter Crunch</fullName>
+                    <default>false</default>
+                    <label>Butter Crunch</label>
+                </value>
+                <value>
+                    <fullName>Butter Pecan</fullName>
+                    <default>false</default>
+                    <label>Butter Pecan</label>
+                </value>
+                <value>
+                    <fullName>Black Bear</fullName>
+                    <default>false</default>
+                    <label>Black Bear</label>
+                </value>
+                <value>
+                    <fullName>Chocolate Chip Cookie Dough</fullName>
+                    <default>false</default>
+                    <label>Chocolate Chip Cookie Dough</label>
+                </value>
+                <value>
+                    <fullName>Chocolate</fullName>
+                    <default>false</default>
+                    <label>Chocolate</label>
+                </value>
+                <value>
+                    <fullName>Chocolate Chip</fullName>
+                    <default>false</default>
+                    <label>Chocolate Chip</label>
+                </value>
+                <value>
+                    <fullName>Chocolate Ripple</fullName>
+                    <default>false</default>
+                    <label>Chocolate Ripple</label>
+                </value>
+                <value>
+                    <fullName>Coconut Almond Bar</fullName>
+                    <default>false</default>
+                    <label>Coconut Almond Bar</label>
+                </value>
+                <value>
+                    <fullName>Coconut</fullName>
+                    <default>false</default>
+                    <label>Coconut</label>
+                </value>
+                <value>
+                    <fullName>Coffee</fullName>
+                    <default>false</default>
+                    <label>Coffee</label>
+                </value>
+                <value>
+                    <fullName>Cookies &amp; Cream</fullName>
+                    <default>false</default>
+                    <label>Cookies &amp; Cream</label>
+                </value>
+                <value>
+                    <fullName>Cotton Candy</fullName>
+                    <default>false</default>
+                    <label>Cotton Candy</label>
+                </value>
+                <value>
+                    <fullName>Frozen Pudding</fullName>
+                    <default>false</default>
+                    <label>Frozen Pudding</label>
+                </value>
+                <value>
+                    <fullName>Ginger</fullName>
+                    <default>false</default>
+                    <label>Ginger</label>
+                </value>
+                <value>
+                    <fullName>Graham Central Station</fullName>
+                    <default>false</default>
+                    <label>Graham Central Station</label>
+                </value>
+                <value>
+                    <fullName>Grapenut</fullName>
+                    <default>false</default>
+                    <label>Grapenut</label>
+                </value>
+                <value>
+                    <fullName>English Toffee Crunch</fullName>
+                    <default>false</default>
+                    <label>English Toffee Crunch</label>
+                </value>
+                <value>
+                    <fullName>Extreme Chocolate</fullName>
+                    <default>false</default>
+                    <label>Extreme Chocolate</label>
+                </value>
+                <value>
+                    <fullName>Maple Walnut</fullName>
+                    <default>false</default>
+                    <label>Maple Walnut</label>
+                </value>
+                <value>
+                    <fullName>Mint Cookies &amp; Cream</fullName>
+                    <default>false</default>
+                    <label>Mint Cookies &amp; Cream</label>
+                </value>
+                <value>
+                    <fullName>Mint Chip</fullName>
+                    <default>false</default>
+                    <label>Mint Chip</label>
+                </value>
+                <value>
+                    <fullName>Mississippi Mud</fullName>
+                    <default>false</default>
+                    <label>Mississippi Mud</label>
+                </value>
+                <value>
+                    <fullName>Mocha Chip</fullName>
+                    <default>false</default>
+                    <label>Mocha Chip</label>
+                </value>
+                <value>
+                    <fullName>Moose Tracks</fullName>
+                    <default>false</default>
+                    <label>Moose Tracks</label>
+                </value>
+                <value>
+                    <fullName>Orange Pineapple</fullName>
+                    <default>false</default>
+                    <label>Orange Pineapple</label>
+                </value>
+                <value>
+                    <fullName>Peanut Butter Cup</fullName>
+                    <default>false</default>
+                    <label>Peanut Butter Cup</label>
+                </value>
+                <value>
+                    <fullName>Peppermint Stick</fullName>
+                    <default>false</default>
+                    <label>Peppermint Stick</label>
+                </value>
+                <value>
+                    <fullName>Pistachio</fullName>
+                    <default>false</default>
+                    <label>Pistachio</label>
+                </value>
+                <value>
+                    <fullName>Pumpkin</fullName>
+                    <default>false</default>
+                    <label>Pumpkin</label>
+                </value>
+                <value>
+                    <fullName>Rum Raisin</fullName>
+                    <default>false</default>
+                    <label>Rum Raisin</label>
+                </value>
+                <value>
+                    <fullName>Salted Caramel Chocolate Pretzel</fullName>
+                    <default>false</default>
+                    <label>Salted Caramel Chocolate Pretzel</label>
+                </value>
+                <value>
+                    <fullName>S&apos;mores</fullName>
+                    <default>false</default>
+                    <label>S&apos;mores</label>
+                </value>
+                <value>
+                    <fullName>Strawberry</fullName>
+                    <default>false</default>
+                    <label>Strawberry</label>
+                </value>
+                <value>
+                    <fullName>Toasted Walnut Fudge</fullName>
+                    <default>false</default>
+                    <label>Toasted Walnut Fudge</label>
+                </value>
+                <value>
+                    <fullName>Vanilla</fullName>
+                    <default>false</default>
+                    <label>Vanilla</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Price</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Rating_Icon__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( Rating__c, 
+&quot;1&quot;, &quot;utility:arrowdown&quot;,
+&quot;2&quot;, &quot;utility:dash&quot;,
+&quot;3&quot;, &quot;utility:dash&quot;, 
+&quot;4&quot;, &quot;utility:dash&quot;,
+&quot;5&quot;, &quot;utility:arrowup&quot;,
+&quot;utility:dash&quot;
+)</formula>
+        <label>Rating Icon</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>Rating</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reviewer__c</fullName>
+        <externalId>false</externalId>
+        <label>Reviewer</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Reviews</relationshipLabel>
+        <relationshipName>Reviews</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Trip__c</fullName>
+        <externalId>false</externalId>
+        <label>Trip</label>
+        <referenceTo>Trip__c</referenceTo>
+        <relationshipLabel>Reviews</relationshipLabel>
+        <relationshipName>Reviews</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>Review</label>
+    <nameField>
+        <displayFormat>{0}</displayFormat>
+        <label>Review Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Reviews</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

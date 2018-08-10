@@ -1,0 +1,82 @@
+<aura:component controller="IceCreamPicsController">
+    <lightning:notificationsLibrary aura:id="notificationsLib"/>
+    
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="fields" type="String[]" default="['Favorite__c','Favorite_Description__c']" />
+ 
+    <aura:attribute name="pics" type="Object[]"/>
+    
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    
+    <aura:handler name="change" value="{!v.recordId}" action="{!c.handleRecordIdChange}"/>
+    
+    <aura:if isTrue="{!not(empty(v.recordId))}">
+        <force:recordData aura:id="recordHandler"
+                          mode="EDIT"
+                          recordId="{!v.recordId}"
+                          fields="{!v.fields}"
+                          targetFields="{!v.simpleRecord}"
+                          targetError="{!v.recordError}"
+        				  recordUpdated="{!c.handleRecordUpdated}"/>
+    </aura:if>
+    
+    <lightning:card title="Pics" iconName="action:add_photo_video" class="slds-p-around_small">
+        <aura:if isTrue="{!not(empty(v.recordId))}">
+            <aura:if isTrue="{!not(empty(v.recordError))}">
+        		<div class="recordError">
+            		{!v.recordError}</div>
+    		</aura:if>
+            <aura:if isTrue="{!not(empty(v.pics))}">
+            	<lightning:layout multipleRows="true">
+                	<lightning:layoutItem size="12" smallDeviceSize="4">
+                        <lightning:carousel class=" small-box" aura:id="carousel">
+                            <aura:iteration items="{!v.pics}" var="pic" indexVar="i">
+                                <lightning:carouselImage 
+                                    src="{!'/sfc/servlet.shepherd/version/download/' + pic.Id}"
+                                    href="{!'/sfc/servlet.shepherd/version/download/' + pic.Id}"
+                                    alternativeText="{!not(empty(pic.Title)) ? 
+                                                     pic.Title : 'A pic from the ice cream trip.'}"
+                                    header="{! (pic.Id == v.simpleRecord.Favorite__c) ? 
+                                               'The Favorite' : 'Not The Favorite'}"/>
+                            </aura:iteration>
+                        </lightning:carousel>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="12" smallDeviceSize="8">
+                        <lightning:textArea label="Favorite Description" 
+                                            value="{!v.simpleRecord.Favorite_Description__c}"/> 
+                        
+                        <lightning:select value="{!v.simpleRecord.Favorite__c}" label="New Favorite">
+                            <option text="None" value=""/>
+                            <aura:iteration items="{!v.pics}" var="pic">
+                                <option text="{!pic.Title}" value="{!pic.Id}" 
+                                        selected="{!v.simpleRecord.Favorite__c == pic.Id}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                        
+                        <lightning:button variant="brand" label="Save Fav!" onclick="{!c.handleSaveFav}"/>
+                        <lightning:fileUpload 
+                            name="fileUploader"
+                            label="Add More Pics"
+                            multiple="true"
+                            onuploadfinished="{! c.handleUploadFinished }"
+                            recordId="{!v.recordId}"/>
+                    </lightning:layoutItem>
+                </lightning:layout>
+        		<aura:set attribute="else">
+                    No pics for this trip...yet!
+                    <lightning:fileUpload 
+                            name="fileUploader"
+                            label="Add More Pics"
+                            multiple="true"
+                            onuploadfinished="{! c.handleUploadFinished }"
+                            recordId="{!v.recordId}"/>
+                </aura:set>
+            </aura:if>
+        	<aura:set attribute="else">
+            	{!$Label.c.NoReviewSelected}
+            </aura:set>
+        </aura:if>
+    </lightning:card>
+    
+</aura:component>

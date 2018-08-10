@@ -1,0 +1,15 @@
+<aura:component controller="IceCreamLinksController">
+    <aura:attribute name="shops" type="Object[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:card title="Shops left to Visit" iconName="standard:campaign" class="slds-p-around_small">
+        <ul class="slds-list_horizontal slds-has-dividers_right slds-wrap">
+            <aura:iteration items="{!v.shops}" var="shop">
+                <li class="slds-list__item">
+                    <lightning:formattedUrl value="{!'/'+shop.Id}"
+                                            label="{!shop.Name}" target="_blank" />
+                </li>
+            </aura:iteration>
+        </ul>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,24 @@
+<aura:component>
+	<lightning:layout multipleRows="true" verticalAlign="stretch">
+        <lightning:layoutItem size="12" mediumDeviceSize="7" class="border">
+            A - 7
+        </lightning:layoutItem>
+        
+        <lightning:layoutItem size="12" mediumDeviceSize="5" class="border">
+            <lightning:layout multipleRows="true">
+                <lightning:layoutItem size="12" class="border">
+                    B(5)1 - 12
+                </lightning:layoutItem>
+                
+                <lightning:layoutItem size="12" class="border">
+                    B(5)2 - 12
+                </lightning:layoutItem>
+            </lightning:layout>
+        </lightning:layoutItem>
+        
+        <lightning:layoutItem size="12" class="border">
+            C - 12
+        </lightning:layoutItem>
+        
+    </lightning:layout>
+</aura:component>

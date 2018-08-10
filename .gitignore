@@ -1,0 +1,6 @@
+*.log
+config
+config/*
+*.sublime-*
+.DS_Store
+mm.log

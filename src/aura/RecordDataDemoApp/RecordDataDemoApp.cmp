@@ -1,0 +1,31 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="tripId" type="String"/>
+    <aura:attribute name="reviewId" type="String"/>
+    
+    <aura:handler name="reviewSelected" 
+                  event="c:reviewSelected"
+                  action="{!c.handleReviewSelected}"/>
+    
+    <lightning:layout multipleRows="true" verticalAlign="stretch" class="container">
+        
+        <lightning:layoutItem size="1" mediumDeviceSize="7" class="border">
+            <c:IceCreamReviewsV3/>
+        </lightning:layoutItem>
+        
+        <lightning:layoutItem size="12" mediumDeviceSize="5">
+            <lightning:layout multipleRows="true">
+                <lightning:layoutItem size="12">
+                    <c:SimpleTrip recordId="{!v.tripId}"/>
+                </lightning:layoutItem>
+                
+                <lightning:layoutItem size="12">
+                    <c:IceCreamPicsV2 recordId="{!v.tripId}"/>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="12">
+            C - 12
+        </lightning:layoutItem>
+        
+    </lightning:layout>
+</aura:component>

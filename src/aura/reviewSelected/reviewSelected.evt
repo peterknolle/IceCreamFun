@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="Fired when a review is selected for viewing">
+    <aura:attribute name="review" type="Object"/>
+</aura:event>

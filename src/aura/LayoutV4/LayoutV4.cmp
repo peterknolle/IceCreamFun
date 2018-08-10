@@ -1,0 +1,45 @@
+<aura:component>
+	<lightning:layout multipleRows="true" verticalAlign="stretch">
+        <lightning:layoutItem size="12" mediumDeviceSize="7" class="border">
+            <table>
+                <thead>
+                    <tr>
+                        <th>One</th>
+                        <th>Two</th>
+                        <th>Three</th>
+                        <th class="slds-show_medium">Four</th>
+                        <th class="slds-show_medium">Five</th>
+                        <th class="slds-show_medium">Six</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>One</td>
+                        <td>Two</td>
+                        <td>Three</td>
+                        <td class="slds-show_medium">Four</td>
+                        <td class="slds-show_medium">Five</td>
+                        <td class="slds-show_medium">Six</td>
+                    </tr>
+                </tbody>
+            </table>
+        </lightning:layoutItem>
+        
+        <lightning:layoutItem size="12" mediumDeviceSize="5" class="border">
+            <lightning:layout multipleRows="true">
+                <lightning:layoutItem size="12" class="border">
+                    B(5)1 - 12
+                </lightning:layoutItem>
+                
+                <lightning:layoutItem size="12" class="border">
+                    B(5)2 - 12
+                </lightning:layoutItem>
+            </lightning:layout>
+        </lightning:layoutItem>
+        
+        <lightning:layoutItem size="12" class="border">
+            C - 12
+        </lightning:layoutItem>
+        
+    </lightning:layout>
+</aura:component>

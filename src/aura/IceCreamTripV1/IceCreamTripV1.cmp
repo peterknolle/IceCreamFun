@@ -1,0 +1,15 @@
+<aura:component >
+    <aura:attribute name="recordId" type="String"/>
+
+    <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Trip__c">
+    	<lightning:card iconName="standard:event" class="slds-p-around_small">
+            	<aura:set attribute="title">
+                	<lightning:outputField fieldName="Shop__c" variant="label-hidden"/>
+            	</aura:set>
+                <lightning:outputField fieldName="Time__c"/>
+                <lightning:outputField fieldName="Weather__c"/>
+                <lightning:outputField fieldName="Notes__c"/>
+        </lightning:card>
+    </lightning:recordViewForm>
+    
+</aura:component>

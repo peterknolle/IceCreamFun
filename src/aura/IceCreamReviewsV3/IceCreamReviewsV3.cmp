@@ -1,0 +1,30 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="IceCreamReviewsControllerV3">
+    <lightning:notificationsLibrary aura:id="notificationsLib"/>
+    
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="Object[]"/>
+    <aura:attribute name="sortedBy" type="String" default="tripTime"/>
+    <aura:attribute name="sortedDirection" type="String" default="desc"/>
+    <aura:attribute name="selectedRows" type="Object[]"/>
+    
+    <aura:registerEvent name="reviewSelected" type="c:reviewSelected"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:card>
+        <lightning:button variant="brand" label="Export" onclick="{!c.handleExport}" />
+        
+    	<lightning:datatable aura:id="reviews-table"
+            columns="{!v.columns}"
+            data="{!v.data}"
+            keyField="Id"
+            hideCheckboxColumn="false"
+            onsort="{!c.handleSort}"
+            sortedBy="{!v.sortedBy}"
+            sortedDirection="{!v.sortedDirection}"
+            onrowaction="{!c.handleRowAction}"
+            onrowselection="{!c.handleRowSelection}"
+            onsave="{!c.handleSave}"
+            class="reviews-table"/>
+        </lightning:card>
+</aura:component>

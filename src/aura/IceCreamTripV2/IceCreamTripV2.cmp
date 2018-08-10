@@ -1,0 +1,37 @@
+<aura:component >
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="mode" type="String" default="edit"/>
+    
+    <lightning:notificationsLibrary aura:id="notificationsLib"/>
+    
+    <aura:if isTrue="{!v.mode == 'readonly'}">
+        <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Trip__c">
+            <lightning:card iconName="standard:event" title="Trip Details" class="slds-p-around_small">
+                <aura:set attribute="title">
+                    <lightning:outputField fieldName="Shop__c" variant="label-hidden"/>
+                </aura:set>
+                <lightning:outputField fieldName="Time__c"/>
+                <lightning:outputField fieldName="Weather__c"/>
+                <lightning:outputField fieldName="Notes__c"/>
+            </lightning:card>
+        </lightning:recordViewForm>
+        
+        <aura:set attribute="else">
+            <lightning:recordEditForm recordId="{!v.recordId}" 
+                                      objectApiName="Trip__c"
+                                      onsuccess="{!c.handleOnSuccess}">
+                <lightning:card iconName="standard:event" title="Trip Details" class="slds-p-around_small">
+                    <lightning:messages />
+                    <lightning:inputField fieldName="Shop__c"/>
+                    <lightning:inputField fieldName="Time__c"/>
+                    <lightning:inputField fieldName="Weather__c"/>
+                    <lightning:inputField fieldName="Notes__c"/>
+                    <div class="slds-m-top_medium">
+                        <lightning:button variant="brand" type="submit" name="save" label="Save" />
+                    </div>
+                </lightning:card>
+            </lightning:recordEditForm>
+        </aura:set>
+    </aura:if>
+    
+</aura:component>
