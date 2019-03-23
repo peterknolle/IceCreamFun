@@ -1,4 +1,4 @@
-# IceCreamFun
+# Ice Cream Fun
 Lightning Components
 
 https://app.pluralsight.com/library/courses/play-by-play-building-salesforce-apps-base-lightning-components
